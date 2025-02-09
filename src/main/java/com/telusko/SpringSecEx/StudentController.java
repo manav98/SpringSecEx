@@ -13,15 +13,19 @@ import java.util.List;
 @RestController
 public class StudentController {
 
-    private List<Student> students = new ArrayList<>(List.of(new Student(1, "Manav", 100), new Student(2, "Gupta", 99)));
+    private List<Student> students = new ArrayList<>(List.of(
+            new Student(1, "Manav", 100),
+            new Student(2, "Gupta", 99),
+            new Student(3, "Peter", 98)
+    ));
 
     @GetMapping("/students")
-    public List<Student> getStudent() {
+    public List<Student> getStudents() {
         return students;
     }
 
     @GetMapping("/csrf-token")
-    public CsrfToken getCsrfToken(HttpServletRequest request) {
+    public CsrfToken getCsrfToken(HttpServletRequest request){
         return (CsrfToken) request.getAttribute("_csrf");
     }
 
