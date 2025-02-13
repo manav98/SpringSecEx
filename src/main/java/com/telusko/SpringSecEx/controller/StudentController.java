@@ -1,5 +1,6 @@
-package com.telusko.SpringSecEx;
+package com.telusko.SpringSecEx.controller;
 
+import com.telusko.SpringSecEx.model.Student;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,8 +17,7 @@ public class StudentController {
     private List<Student> students = new ArrayList<>(List.of(
             new Student(1, "Manav", 100),
             new Student(2, "Gupta", 99),
-            new Student(3, "Peter", 98)
-    ));
+            new Student(3, "Peter", 98)));
 
     @GetMapping("/students")
     public List<Student> getStudents() {
@@ -25,7 +25,7 @@ public class StudentController {
     }
 
     @GetMapping("/csrf-token")
-    public CsrfToken getCsrfToken(HttpServletRequest request){
+    public CsrfToken getCsrfToken(HttpServletRequest request) {
         return (CsrfToken) request.getAttribute("_csrf");
     }
 
