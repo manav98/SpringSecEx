@@ -1,4 +1,4 @@
-package com.telusko.SpringSecEx;
+package com.telusko.SpringSecEx.model;
 
 public class Student {
     private int id;
@@ -37,10 +37,6 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", marks=" + marks +
-                '}';
+        return "Student{" + "id=" + id + ", name='" + name + '\'' + ", marks=" + marks + '}';
     }
 }
